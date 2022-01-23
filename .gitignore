@@ -6,4 +6,4 @@
 *.vcd
 
 # linux
-*a.out
+*.out

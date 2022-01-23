@@ -1,7 +1,7 @@
-module one_bit_full_adder (a, b, cin, s, cout);
+module one_bit_full_adder (sum, cout, a, b, cin);
 	input a, b, cin;
-	output s, cout;
+	output sum, cout;
 	
-	assign s = a ^ b ^ cin;
+	assign sum = a ^ b ^ cin;
 	assign cout = (a & b) | (a & cin) | (b & cin);	
 endmodule

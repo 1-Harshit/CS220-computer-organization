@@ -1,4 +1,4 @@
-module one_bit_comparator(out_less,out_equal,out_more,a,b,in_less,in_equal,in_more);
+module one_bit_comparator(out_less, out_equal, out_more, a, b, in_less, in_equal, in_more);
     input a,b,in_less,in_equal,in_more;
     output out_less,out_equal,out_more;
 

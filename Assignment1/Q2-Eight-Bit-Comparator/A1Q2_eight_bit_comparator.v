@@ -1,5 +1,5 @@
 `include "A1Q2_one_bit_comparator.v"
-module eight_bit_comparator(out_less,out_equal,out_more,a,b);
+module eight_bit_comparator(out_less, out_equal, out_more, a, b);
     output out_less,out_equal,out_more;
     input [7:0] a,b;
     wire g[0:7];

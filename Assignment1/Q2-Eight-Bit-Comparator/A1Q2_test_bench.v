@@ -2,13 +2,13 @@
 module test_bench();
     wire l,e,g;
     reg[7:0] a,b;
-    eight_bit_comparator comp(l,e,g,a,b);
+    eight_bit_comparator comp(l, e, g, a, b);
     initial
     begin
-        $monitor("time: %4d | compare %d, %d res:%d%d%d",$time, a,b,l,e,g);
-        #5
-        a = 7; b=7;
-        repeat(20) begin
+        $display("time ||   a |   b || lesser | equal | greater ");
+        $monitor("%4d || %d | %d || %6d | %5d | %7d", $time,a,b,l,e,g);
+        a = 45; b=45;
+        repeat(15) begin
           #5
           a = $urandom%256;
           b = $urandom%256;

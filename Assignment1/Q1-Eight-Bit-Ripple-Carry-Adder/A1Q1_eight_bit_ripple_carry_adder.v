@@ -5,7 +5,7 @@ module eight_bit_ripple_carry_adder (sum, cout, a, b, cin);
 	input [7:0]b;
 	input cin;
 	output [7:0]sum;
-	input cout;
+	output cout;
 
 	wire [6:0]carry;
 

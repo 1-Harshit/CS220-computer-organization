@@ -1,0 +1,9 @@
+# mac
+*.DS_Store
+
+# verilog
+*.vvp
+*.vcd
+
+# linux
+*.out

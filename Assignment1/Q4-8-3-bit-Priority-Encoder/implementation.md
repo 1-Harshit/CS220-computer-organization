@@ -17,5 +17,5 @@ x	x	x	x	x	x	1	0	    0	0	1
 x	x	x	x	x	x	x	1	    0	0	0
 ```
 # assumption
-- `8'b00000000` is a invalid input in our implementation the output for same is `100`
+- `8'b00000000` is an invalid input in our implementation the output for same is `100`
 

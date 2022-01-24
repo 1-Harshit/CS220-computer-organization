@@ -7,3 +7,7 @@
 
 # linux
 *.out
+
+#submission
+*zip
+*tar.gz

@@ -1,6 +1,6 @@
 `include "./A1Q1_eight_bit_ripple_carry_adder.v"
 
-module eight_bit_adder_top ();
+module eight_bit_adder_tb();
 
 	reg [7:0] a; //the 2 numbers
 	reg [7:0] b;

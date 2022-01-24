@@ -1,5 +1,6 @@
 `include "A1Q2_eight_bit_comparator.v"
-module eight_bit_comparator_top();
+
+module eight_bit_comparator_tb();
     wire l,e,g;
     reg[7:0] a,b; //input numbers
     eight_bit_comparator comp(l, e, g, a, b,1'b0,1'b1,1'b0);

@@ -2,7 +2,7 @@
 module eight_bit_comparator_top();
     wire l,e,g;
     reg[7:0] a,b;
-    eight_bit_comparator comp(l, e, g, a, b);
+    eight_bit_comparator comp(l, e, g, a, b,1'b0,1'b1,1'b0);
 
     initial begin
         $display("time ||   a |   b || lesser | equal | greater ");

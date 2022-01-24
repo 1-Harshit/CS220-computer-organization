@@ -1,7 +1,7 @@
 `include "A1Q3_three_to_eight_decoder.v"
 
 module two_to_four_decoder_test();
-    reg[2:0] INP=3'd0;
+    reg[2:0] INP=3'd0; //initial case
     wire [7:0] OP;
     
     three_to_eight_decoder d0(OP,INP,1'b1);

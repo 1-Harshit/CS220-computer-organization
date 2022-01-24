@@ -1,9 +1,9 @@
 `include "A1Q2_one_bit_comparator.v"
 module eight_bit_comparator(out_less, out_equal, out_more, a,b, in_less, in_equal, in_more);
     output out_less,out_equal,out_more;
-    input [7:0] a,b;
-    input in_less, in_equal, in_more;
-    wire g[0:7];
+    input [7:0] a,b; //8 bit inputs
+    input in_less, in_equal, in_more; //these are left for debugging and
+    wire g[0:7];                      // and develop even bigger comparators from eight bit comparator 
     wire e[0:7];
     wire l[0:7];
 

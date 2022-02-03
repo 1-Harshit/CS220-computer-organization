@@ -1,8 +1,8 @@
-# CS220-computer-organization
+# CS220-Computer-Organization
 
 Assignment 1 submission of the semester 2021-22-II semester of CS220A at IIT Kanpur.
 
-## how to run the code
+## How to run the code
 
 ```bash
 # navigate to the directory where the code is present
@@ -13,14 +13,14 @@ iverilog <file_name>.v -o <output_file_name>
 vvp ./<output_file_name>
 ```
 
-## circuit explanations
+## Circuit Explanations
 
-### question 1
+### Question 1
 
 We first implement a one-bit adder in `A1Q1_one_bit_full_adder.v`. The adder takes the XOR of the two bits being added along with the carry-in, and gives it as the sum. It then takes the AND of the bits (two at a time) and takes their OR to give cout.  
 The eight-bit full adder takes eight instances of the one-bit adder, with the cout of one instance serving as the cin for the next instance for the first 7 instances. The final sum is stored in an eight-bit vector  
 
-### question 2
+### Question 2
 
 We first implement a one-bit comparator. The comparator takes in five inputs, two being the bits being compared, and three being the outputs of the previous bits being compared:  
 
@@ -39,23 +39,19 @@ We take the OR of these two cases and then finally take its AND with the NOT of 
 We take the OR of these two cases and then finally take its AND with the NOT of in_less  
 We finally implement the eight-bit comparator with eight instances of the one-bit comparator.
 
-### question 3
+### Question 3
 
 We first implement the 2-4 decoder, which takes in a 2 bit input and a 4 bit output, along with a one bit enabler.
 
 - The first output bit must be the case when input is 00, hence we take the NOT of the inputs, take their AND, and then again take the AND with the enabler
-- The second output bit must be the case when input is 10, hence we take the NOT of the first input, take its AND with the second, and then again take the AND with the enabler  
-- The third output bit must be the case when input is 01, hence we take the NOT of the second input, take its AND with the first, and then again take the AND with the enabler
+- The second output bit must be the case when input is 01, hence we take the NOT of the first input, take its AND with the second, and then again take the AND with the enabler  
+- The third output bit must be the case when input is 10, hence we take the NOT of the second input, take its AND with the first, and then again take the AND with the enabler
 - The fourth output bit must be the case when input is 11, hence we take the inputs AND, and then again take the AND with the enabler  
 Then the 3-8 decoder is implemented using two instances of the 2-4 decoder, first with the third input and second with the NOT of the third input.
 
-### question 4
+### Question 4
 
-After understanding the truth table and making the Karnaugh map of the circuit, we came up with the following method to encode the input. Along with taking the AND with the enabler bit:  
-
-- the first bit is the NOT of the first input bit along with the AND of the second input bit along with the OR of the NOT of the third input bit and so on till the last input bit  
-- the second bit is the AND of the NOTS of the first two input bits, with the OR of the second two input bits, with AND of the NOT of the third two input bits and so on.  
-- the third bit is the AND of the NOTS of the first four input bits  
+After understanding the truth table and making the Karnaugh map of the circuit, we came up with the logic after extensive thought.
 
 ## notes
 

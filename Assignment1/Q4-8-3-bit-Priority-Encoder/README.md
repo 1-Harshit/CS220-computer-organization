@@ -1,4 +1,5 @@
 # truth table
+
 ```
 INPUT: q0 - q7
 OUTPUT: y0 - y2
@@ -16,6 +17,7 @@ x	x	x	x	x	1	0	0	    0	1	0
 x	x	x	x	x	x	1	0	    0	0	1
 x	x	x	x	x	x	x	1	    0	0	0
 ```
-# assumption
-- `8'b00000000` is an invalid input in our implementation the output for same is `100`
 
+# assumption
+
+- `8'b00000000` is an invalid input in our implementation the output for same is `100`

@@ -1,4 +1,4 @@
-`include "d_flip_flop.v"
+`include "A2Q2_d_flip_flop.v"
 module johnson_counter(q,clk);
     input clk;
     output [0:7] q; //wrote [0:7] so that in test bench,

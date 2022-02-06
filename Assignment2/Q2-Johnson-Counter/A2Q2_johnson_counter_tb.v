@@ -1,4 +1,4 @@
-`include "johnson_counter.v"
+`include "A2Q2_johnson_counter.v"
 module johnson_counter_tb();
     reg clk;
     wire[7:0] q;

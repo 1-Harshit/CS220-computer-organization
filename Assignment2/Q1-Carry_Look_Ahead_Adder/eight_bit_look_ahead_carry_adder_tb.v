@@ -14,7 +14,7 @@ module eight_bit_look_ahead_carry_adder_tb();
             //we are randomly initializing cin also to check that code works perfectly
 
             //c_out 1 implies there is overflow more than 8 bits
-            //and that we need to add 256 to the result to get answer
+            //and that we need to add 256 to the result to get right answer
 		end
     end
 

@@ -5,7 +5,7 @@ module johnson_counter_tb();
     johnson_counter JC(q,clk);
     initial begin
         clk = 0;
-        $monitor("%b",q); //prints the output of first to last D1 to D8 in order
+        $monitor("Time: %3d | %b", $time, q); //prints the output of first to last D1 to D8 in order
         repeat(32) begin
             #5 clk = ~clk;
         end

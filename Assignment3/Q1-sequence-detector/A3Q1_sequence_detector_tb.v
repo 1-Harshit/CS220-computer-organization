@@ -2,12 +2,15 @@
 module test();
 	reg[7:0] seq=8'd0;
 	wire [7:0] out;
-	reg reset=1'b0;
+	reg reset;
+
 	sequence_detector_full S1(out,seq,reset);
 	initial begin
 		repeat(25) begin
-			#48
+			#47
 			$display("%b %b", out, seq);
+			reset=1;
+			#1 reset=0;
 			seq=seq+1;
 		end
 	end
@@ -17,7 +20,7 @@ module sequence_detector_full(out,seq,reset);
 	output reg [7:0] out=8'b00000000;
 	input [7:0] seq;
 	input reset;
-
+	
 	reg i=0;
 	wire o;
 	wire clk;

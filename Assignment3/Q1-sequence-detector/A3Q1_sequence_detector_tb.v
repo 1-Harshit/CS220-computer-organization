@@ -1,12 +1,15 @@
 `include "A3Q1_sequence_detector.v"
-module test();
+module test_bench();
 	reg[7:0] seq=8'd0;
 	wire [7:0] out;
 	reg reset;
+	wire clk;
 
-	sequence_detector_full S1(out,seq,reset);
+	clock_module C1(clk);
+	sequence_detector_full S1(out,seq,reset,clk);
+	
 	initial begin
-		repeat(25) begin
+		repeat(15) begin
 			#47
 			$display("%b %b", out, seq);
 			reset=1;
@@ -16,17 +19,16 @@ module test();
 	end
 
 endmodule
-module sequence_detector_full(out,seq,reset);
+module sequence_detector_full(out,seq,reset,clk);
 	output reg [7:0] out=8'b00000000;
 	input [7:0] seq;
 	input reset;
+	input clk;
 	
 	reg i=0;
 	wire o;
-	wire clk;
 	integer count=7;
 	wire[2:0] deb;
-	clock_module C1(clk);
 	sequence_detector sd (o,deb,i, clk,reset);
 	initial begin
 		// $monitor("%b %b %b",deb,i,o);
@@ -46,7 +48,7 @@ endmodule
 module clock_module(clk);
 	output reg clk=1'b1;
 	initial begin
-		repeat(25) begin
+		repeat(15) begin
 			repeat(16) begin
 				#3 clk=~clk;
 			end

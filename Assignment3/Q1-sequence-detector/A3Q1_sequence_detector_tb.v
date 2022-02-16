@@ -1,7 +1,7 @@
 `include "A3Q1_sequence_detector.v"
 module sequence_detector_tb();
 	reg [7:0] out=8'b00000000;
-	reg [7:0] seq=8'b01010101;
+	reg [7:0] seq=8'd11;
 	reg i=0;
 	wire o;
 	wire clk;
@@ -15,7 +15,7 @@ module sequence_detector_tb();
 	always @(negedge clk) begin
 		i=seq[count];
 		#1
-		out[count-1]=o;
+		out[count]=o;
 		count=count-1;
 		if(count==-1) begin
 			$display("%b %b", out, seq);

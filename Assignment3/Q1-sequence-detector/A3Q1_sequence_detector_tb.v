@@ -9,9 +9,10 @@ module test_bench();
 	sequence_detector_full S1(out,seq,reset,clk);
 	
 	initial begin
+		$display("Sequence Result");
 		repeat(15) begin //edit here to change number of test cases
 			#47
-			$display("%b %b", out, seq);
+			$display("%b %b", seq, out);
 			reset=1;
 			#1 reset=0;
 			seq=seq+1;

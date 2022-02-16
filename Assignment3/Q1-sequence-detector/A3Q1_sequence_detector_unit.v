@@ -1,5 +1,5 @@
 `include "A3Q1_d_flip_flop.v"
-module sequence_detector (out,k,inp,clk,reset);
+module sequence_detector_unit(out,k,inp,clk,reset);
   output out;
   input inp;
   input clk;

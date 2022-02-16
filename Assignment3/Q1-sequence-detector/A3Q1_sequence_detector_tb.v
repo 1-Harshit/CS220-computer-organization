@@ -1,4 +1,4 @@
-`include "A3Q1_sequence_detector.v"
+`include "A3Q1_sequence_detector_full.v"
 module test_bench();
 	reg[7:0] seq=8'd0;
 	wire [7:0] out;
@@ -9,7 +9,7 @@ module test_bench();
 	sequence_detector_full S1(out,seq,reset,clk);
 	
 	initial begin
-		repeat(15) begin
+		repeat(15) begin //edit here to change number of test cases
 			#47
 			$display("%b %b", out, seq);
 			reset=1;
@@ -19,36 +19,11 @@ module test_bench();
 	end
 
 endmodule
-module sequence_detector_full(out,seq,reset,clk);
-	output reg [7:0] out=8'b00000000;
-	input [7:0] seq;
-	input reset;
-	input clk;
-	
-	reg i=0;
-	wire o;
-	integer count=7;
-	wire[2:0] deb;
-	sequence_detector sd (o,deb,i, clk,reset);
-	initial begin
-		// $monitor("%b %b %b",deb,i,o);
-	end
-	always @(negedge clk) begin
-		i=seq[count];
-		#1
-		out[count]=o;
-		count=count-1;
-		if(count==-1) begin
-			// $display("%b %b", out, seq);
-		  count=7;
-		end
-	end
-endmodule
 
 module clock_module(clk);
 	output reg clk=1'b1;
 	initial begin
-		repeat(15) begin
+		repeat(15) begin //edit here to change number of test cases
 			repeat(16) begin
 				#3 clk=~clk;
 			end

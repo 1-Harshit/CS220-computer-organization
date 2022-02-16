@@ -10,7 +10,7 @@ module test_bench();
 	
 	initial begin
 		$display("Sequence Result");
-		repeat(15) begin //edit here to change number of test cases
+		repeat(15) begin //edit here to change number of test cases, change in clock module also below
 			#47
 			$display("%b %b", seq, out);
 			reset=1;

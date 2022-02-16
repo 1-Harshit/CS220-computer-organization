@@ -2,7 +2,8 @@
 module test();
 	reg[7:0] seq=8'd0;
 	wire [7:0] out;
-	sequence_detector_full S1(out,seq);
+	reg reset=1'b0;
+	sequence_detector_full S1(out,seq,reset);
 	initial begin
 		repeat(25) begin
 			#48
@@ -12,9 +13,10 @@ module test();
 	end
 
 endmodule
-module sequence_detector_full(out,seq);
+module sequence_detector_full(out,seq,reset);
 	output reg [7:0] out=8'b00000000;
 	input [7:0] seq;
+	input reset;
 
 	reg i=0;
 	wire o;
@@ -22,7 +24,7 @@ module sequence_detector_full(out,seq);
 	integer count=7;
 	wire[2:0] deb;
 	clock_module C1(clk);
-	sequence_detector sd (o,deb,i, clk);
+	sequence_detector sd (o,deb,i, clk,reset);
 	initial begin
 		// $monitor("%b %b %b",deb,i,o);
 	end

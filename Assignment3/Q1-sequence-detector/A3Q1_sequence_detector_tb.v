@@ -10,10 +10,10 @@ module test_bench();
 	
 	initial begin
 		#5
-		$display("Sequence Result");
+		$display("Sequence  Result");
 		repeat(15) begin //edit here to change number of test cases, change in clock module also below
 			#79 //according to clock and input cycles, this is right time to read output
-			$display("%b %b", seq, out);
+			$display("%b  %b", seq, out);
 			reset=1;
 			#1
 			reset=0;

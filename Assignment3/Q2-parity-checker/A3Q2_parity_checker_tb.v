@@ -13,7 +13,7 @@ module test_bench();
 		$display("Sequence Parity");
 		repeat(8) begin //edit here to change number of test cases, change in clock module also below
 			#29 //according to clock and input cycles, this is right time to read output
-			$display("%b       %b", seq, out);
+			$display("%b      %b", seq, out);
 			reset=1;
 	
 			#1 reset=0;
@@ -33,3 +33,4 @@ module clock_module(clk); //separate module to avoid confusion
 		end
 	end
 endmodule
+ 

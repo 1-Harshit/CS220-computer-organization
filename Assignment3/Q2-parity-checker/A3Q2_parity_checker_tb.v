@@ -33,4 +33,3 @@ module clock_module(clk); //separate module to avoid confusion
 		end
 	end
 endmodule
- 

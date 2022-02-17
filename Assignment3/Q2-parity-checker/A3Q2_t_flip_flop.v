@@ -1,10 +1,10 @@
 module t_flip_flop(q,t,clk,reset); //if t is 1, q flips its value, otherwise it is same
-    output reg q=1'b0;
+    output reg q=1'b1;
     input reset;
     input t,clk;
 
     always@(reset) begin
-        q=0;
+        q=1;
     end
 
     always @(posedge clk) begin

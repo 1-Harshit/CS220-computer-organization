@@ -17,6 +17,6 @@ module parity_checker(out,seq,reset,clk);
 		end
 	end
 	always @(posedge clk) begin
-		out=~o;
+		out=o;
 	end
 endmodule

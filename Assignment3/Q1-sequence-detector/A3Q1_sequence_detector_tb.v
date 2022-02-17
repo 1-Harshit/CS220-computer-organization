@@ -9,15 +9,15 @@ module test_bench();
 	sequence_detector_full S1(out,seq,reset,clk);
 	
 	initial begin
-		#3
+		#5
 		$display("Sequence Result");
-		repeat(128) begin //edit here to change number of test cases, change in clock module also below
-			#47
+		repeat(15) begin //edit here to change number of test cases, change in clock module also below
+			#79
 			$display("%b %b", seq, out);
 			reset=1;
 			#1
 			reset=0;
-			seq=seq+1;
+			seq=($urandom*$urandom) /128; //random 8 bit sequence generator
 		end
 	end
 
@@ -26,9 +26,9 @@ endmodule
 module clock_module(clk); //it is the clock
 	output reg clk=1'b1;
 	initial begin
-		repeat(128) begin //edit here to change number of test cases
+		repeat(15) begin //edit here to change number of test cases
 			repeat(16) begin
-				#3 clk=~clk;
+				#5 clk=~clk;
 			end
 		end
 	end

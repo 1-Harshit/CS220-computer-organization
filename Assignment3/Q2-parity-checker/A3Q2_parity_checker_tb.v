@@ -9,10 +9,10 @@ module test_bench();
 	parity_checker P1(out,seq,reset,clk);
 	
 	initial begin
-		#3
+		#5
 		$display("Sequence Parity");
 		repeat(8) begin //edit here to change number of test cases, change in clock module also below
-			#16
+			#28
 			$display("%b       %b", seq, out);
 			reset=1;
 			// $display(" ");
@@ -28,7 +28,7 @@ module clock_module(clk);
 	initial begin
 		repeat(8) begin //edit here to change number of test cases
 			repeat(6) begin
-				#3 clk=~clk;
+				#5 clk=~clk;
 			end
 		end
 	end

@@ -1,5 +1,5 @@
 `include "A3Q1_sequence_detector_full.v"
-module test_bench();
+module sequence_detector_tb();
 	reg[7:0] seq=8'd0;
 	wire [7:0] out;
 	reg reset;

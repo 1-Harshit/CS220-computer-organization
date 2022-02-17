@@ -10,10 +10,10 @@ module test_bench();
 	
 	initial begin
 		#3
-		// $display("Sequence Result");
+		$display("Sequence Parity");
 		repeat(8) begin //edit here to change number of test cases, change in clock module also below
 			#16
-			$display("%b %b", seq, out);
+			$display("%b       %b", seq, out);
 			reset=1;
 			// $display(" ");
 			#2 reset=0;

@@ -1,6 +1,6 @@
 `include "A3Q1_sequence_detector_unit.v"
 module sequence_detector_full(out,seq,reset,clk);
-	output reg [7:0] out=8'b00000000;
+	output reg [7:0] out=8'd0;
 	input [7:0] seq;
 	input reset;
 	input clk;
@@ -10,9 +10,6 @@ module sequence_detector_full(out,seq,reset,clk);
 	integer count=7;
 	wire[2:0] deb;
 	sequence_detector_unit sd (o,deb,i, clk,reset);
-	initial begin
-		// $monitor("%b %b %b",deb,i,o);
-	end
 	always @(negedge clk) begin
 		i=seq[count];
 		#1

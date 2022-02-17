@@ -4,18 +4,18 @@ module toggle_flip_flop(
     input clk,
     output reg q
 );
-initial q = 0;
-always @ (posedge clk) begin
+initial q = 1'b1;
+always @ (posedge clk or posedge reset) begin
     if (reset) begin
-        q <= 0;
+        q <= 1'b1;
     end
     else begin
         if(t) begin
-            q <= ~q;
+            q = ~q;
         end
         else begin
-            q <= q;
+            q = q;
         end
     end
-end 
+end
 endmodule

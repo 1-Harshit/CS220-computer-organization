@@ -12,7 +12,7 @@ module test_bench();
 		#5
 		$display("Sequence Result");
 		repeat(15) begin //edit here to change number of test cases, change in clock module also below
-			#79
+			#79 //according to clock and input cycles, this is right time to read output
 			$display("%b %b", seq, out);
 			reset=1;
 			#1
@@ -23,7 +23,7 @@ module test_bench();
 
 endmodule
 
-module clock_module(clk); //it is the clock
+module clock_module(clk); //separate module to avoid confusion
 	output reg clk=1'b1;
 	initial begin
 		repeat(15) begin //edit here to change number of test cases

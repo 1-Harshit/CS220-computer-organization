@@ -10,11 +10,10 @@ module parity_checker(out,seq,reset,clk);
 	wire o;
 	t_flip_flop T1(o,i,clk,reset);
 	always @(negedge clk) begin
-		i=seq[count];
+		i=seq[count]; //every clock cycle, it feeds one bit of the 3 bit sequence to t_flip_flip
 		count=count-1;
 		if(count==-1) begin
-			// $display("%b %b", out, seq);
-		  count=2;
+		  count=2; //resets after 3 bits are done
 		end
 	end
 	always @(posedge clk) begin

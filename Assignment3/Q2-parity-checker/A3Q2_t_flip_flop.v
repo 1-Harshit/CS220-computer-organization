@@ -1,16 +1,15 @@
-module t_flip_flop(q,d,clk,reset);
+module t_flip_flop(q,t,clk,reset); //if t is 1, q flips its value, otherwise it is same
     output reg q=1'b0;
     input reset;
-    input d,clk;
+    input t,clk;
 
     always@(reset) begin
         q=0;
     end
 
     always @(posedge clk) begin
-        if(d==1'b1) begin
+        if(t==1'b1) begin
             q=~q;
         end
-        // $display("%b %b",q,d);
     end
 endmodule

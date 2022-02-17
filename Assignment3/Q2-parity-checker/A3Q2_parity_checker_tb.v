@@ -1,5 +1,5 @@
 `include "A3Q2_parity_checker.v"
-module test_bench();
+module parity_checker_tb();
 	reg[2:0] seq=3'd0;
 	wire out;
 	reg reset;

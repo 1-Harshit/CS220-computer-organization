@@ -9,7 +9,7 @@ module parity_checker(out,seq,reset,clk);
 	reg i;
 	wire o;
 	t_flip_flop T1(o,i,clk,reset);
-	always @(negedge clk) begin
+	always @(negedge clk) begin //we feed inputs at negative edge
 		i=seq[count]; //every clock cycle, it feeds one bit of the 3 bit sequence to t_flip_flip
 		count=count-1;
 		if(count==-1) begin

@@ -22,5 +22,5 @@ one_bit_full_adder fa4(sum[4], carry[4], a[4], b[4], opcode, carry[3]);
 one_bit_full_adder fa5(sum[5], carry[5], a[5], b[5], opcode, carry[4]);
 one_bit_full_adder fa6(sum[6], carry[6], a[6], b[6], opcode, carry[5]);
 one_bit_full_adder fa7(sum[7], carry[7], a[7], b[7], opcode, carry[6]);
-assign overflow = (opcode & (carry[7] ^ carry[6])) ^ (~opcode & carry[7]);
+assign overflow = (carry[7] ^ carry[6]);
 endmodule

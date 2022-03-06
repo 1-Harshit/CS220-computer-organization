@@ -64,8 +64,8 @@ end
 //end of mechanism
 initial begin
 	// We've also tested by varying opcode to properly test the module
-    $display("Time |     final_a |   final_b | opcode | sum/diff | overflow | a |        b | sum");
-	$monitor("%4d | %d | %d | %b | %d | %b | %b | %b | %b", $time, final_a, final_b, opcode, final_sum_or_diff, overflow, a, b, sum);
+    $display("Time |     final_a |      final_b | opcode | sum/diff    | overflow | a        |        b | sum");
+	$monitor("%4d | %d | %d  |   %b    | %d | %b        | %b | %b | %b", $time, final_a, final_b, opcode, final_sum_or_diff, overflow, a, b, sum);
 	repeat(15) begin
 		#5
 		a = $urandom % 256; b = $urandom % 256; opcode = $urandom % 2;

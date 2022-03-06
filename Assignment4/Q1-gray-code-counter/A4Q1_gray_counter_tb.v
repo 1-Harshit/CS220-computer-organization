@@ -10,8 +10,7 @@ module gray_counter_tb ();
 
 	initial begin
 		pulse = 1'b0;
-		// $monitor("%4d | pulse: %b out: %b", $time, pulse, out);
-
+		$monitor("%4d | pulse: %b out: %b", $time, pulse, out);
 		#5;
 		pulse = 1'b1;
 		#6;
@@ -54,10 +53,65 @@ module gray_counter_tb ();
 		pulse = 1'b0;
 		#9;
 		pulse = 1'b1;
-		
-
-
-
+		#4;
+		pulse = 1'b0;
+		#5;
+		pulse = 1'b1;
+		#6;
+		pulse = 1'b0;
+		#7;
+		pulse = 1'b1;
+		#8;
+		pulse = 1'b0;
+		#9;
+		pulse = 1'b1;
+		#10;
+		pulse = 1'b0;
+		#4;
+		pulse = 1'b1;
+		#5;
+		pulse = 1'b0;
+		#6;
+		pulse = 1'b1;
+		#7;
+		pulse = 1'b0;
+		#8;
+		pulse = 1'b1;
+		#9;
+		pulse = 1'b0;
+		#10;
+		pulse = 1'b1;
+		#4;
+		pulse = 1'b0;
+		#5;
+		pulse = 1'b1;
+		#6;
+		pulse = 1'b0;
+		#7;
+		pulse = 1'b1;
+		#8;
+		pulse = 1'b0;
+		#9;
+		pulse = 1'b1;
+		#10;
+		pulse = 1'b0;
+		#4;
+		pulse = 1'b1;
+		#5;
+		pulse = 1'b0;
+		#6;
+		pulse = 1'b1;
+		#7;
+		pulse = 1'b0;
+		#8;
+		pulse = 1'b1;
+		#9;
+		pulse = 1'b0;
+		#10;
+		pulse = 1'b1;
+		#4;
+		pulse = 1'b0;
+		#5;
 		$finish;
 	end
 

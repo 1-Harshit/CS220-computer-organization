@@ -6,9 +6,9 @@ module gray_counter (input pulse, output out);
   wire [2:0] q1;
   wire [2:0] q2;
 
-  d_flip_flop dff2(.clk(pulse), .d(q0[1]), .q(q[2]));
+  d_flip_flop dff2(.clk(pulse), .d(q0[1]), .q(q[0]));
   d_flip_flop dff1(.clk(pulse), .d(q1[2]), .q(q[1]));
-  d_flip_flop dff0(.clk(pulse), .d(q2[2]), .q(q[0]));
+  d_flip_flop dff0(.clk(pulse), .d(q2[2]), .q(q[2]));
 
   xor LQ01(q0[0], q[1], q[2]);
   not LQ02(q0[1], q0[0]);

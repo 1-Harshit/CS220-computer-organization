@@ -10,7 +10,7 @@ module gray_counter_tb ();
 
 	initial begin
 		pulse = 1'b0;
-		$monitor("%4d | pulse: %b out: %b", $time, pulse, out);
+		$monitor("%4d | pulse: %b out: %b", $time, pulse, out); //every 8 pulses we get output 1
 		#5;
 		pulse = 1'b1;
 		#6;

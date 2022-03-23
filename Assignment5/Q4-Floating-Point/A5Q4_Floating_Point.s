@@ -1,10 +1,14 @@
             .data
 vector:     .space 40
 msg:        .asciiz "Result is: "
-
+msgstart:   .asciiz "Enter size of vector followed by every floating number on new line :"
             .text
             .globl main
-main:       li $v0,5 # read number
+main:       li $v0,4
+            la $a0,msgstart
+            syscall
+            
+            li $v0,5 # read number
             syscall
             addi $t0,$v0,0
             addi $t2,$v0,0
